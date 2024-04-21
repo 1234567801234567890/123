@@ -1,0 +1,110 @@
+import pygame
+
+pygame.init()
+win = pygame.display.set_mode((450, 450))
+x = 1
+y = 1
+z = 1
+
+
+class Board:
+
+    def __init__(self, width, height):
+        self.width = width
+        self.height = height
+
+    def nar_pole(self):
+        self.width = 5
+        self.height = 5
+        pygame.draw.line(win, (255, 255, 255), (150, 0), (150, 450), self.width)
+        pygame.draw.line(win, (255, 255, 255), (300, 0), (300, 450), self.width)
+        pygame.draw.line(win, (255, 255, 255), (0, 150), (450, 150), self.width)
+        pygame.draw.line(win, (255, 255, 255), (0, 300), (450, 300), self.width)
+
+    # def check_kyrsor(self):
+
+
+win.fill((0, 225, 225))
+while True:
+    for event in pygame.event.get():
+        if event.type == pygame.QUIT:
+            exit()
+    win.fill((0, 225, 225))
+    pos = pygame.mouse.get_pos()
+    if pygame.mouse.get_pressed()[0]:
+        if 0 <= pos[0] <= 150 and 0 <= pos[1] <= 150:
+            pygame.draw.circle(win, (255, 255, 0), (75, 75), 70)
+    if pygame.mouse.get_pressed()[2]:
+        if 0 <= pos[0] <= 150 and 0 <= pos[1] <= 150:
+            pygame.draw.line(win, (255, 255, 0), (0, 0), (150, 150), 10)
+            pygame.draw.line(win, (255, 255, 0), (0, 150), (150, 0), 10)
+
+    if pygame.mouse.get_pressed()[0]:
+        if 150 <= pos[0] <= 300 and 0 <= pos[1] <= 150:
+            pygame.draw.circle(win, (255, 255, 0), (225, 75), 70)
+    if pygame.mouse.get_pressed()[2]:
+        if 150 <= pos[0] <= 300 and 0 <= pos[1] <= 150:
+            pygame.draw.line(win, (255, 255, 0), (150, 0), (300, 150), 10)
+            pygame.draw.line(win, (255, 255, 0), (150, 150), (300, 0), 10)
+    # 3 krectik
+    if pygame.mouse.get_pressed()[0]:
+        if 300 <= pos[0] <= 450 and 0 <= pos[1] <= 150:
+            pygame.draw.circle(win, (255, 255, 0), (375, 75), 70)
+    if pygame.mouse.get_pressed()[2]:
+        if 300 <= pos[0] <= 450 and 0 <= pos[1] <= 150:
+            pygame.draw.line(win, (255, 255, 0), (300, 0), (450, 150), 10)
+            pygame.draw.line(win, (255, 255, 0), (300, 150), (450, 0), 10)
+
+    # thrsaygjnwthyjnwt
+    if pygame.mouse.get_pressed()[0]:
+        if 0 < pos[0] < 150 and 150 < pos[1] < 300:
+            pygame.draw.circle(win, (255, 255, 0), (75, 225), 70)
+    if pygame.mouse.get_pressed()[2]:
+        if 0 < pos[0] < 150 and 150 < pos[1] < 300:
+            pygame.draw.line(win, (255, 255, 0), (0, 150), (150, 300), 10)
+            pygame.draw.line(win, (255, 255, 0), (0, 300), (150, 150), 10)
+
+    if pygame.mouse.get_pressed()[0]:
+        if 150 < pos[0] < 300 and 150 < pos[1] < 300:
+            pygame.draw.circle(win, (255, 255, 0), (225, 225), 70)
+    if pygame.mouse.get_pressed()[2]:
+        if 150 < pos[0] < 300 and 150 < pos[1] < 300:
+            pygame.draw.line(win, (255, 255, 0), (150, 150), (300, 300), 10)
+            pygame.draw.line(win, (255, 255, 0), (150, 300), (300, 150), 10)
+    # 3 krectik
+    if pygame.mouse.get_pressed()[0]:
+        if 300 < pos[0] < 450 and 150 < pos[1] < 300:
+            pygame.draw.circle(win, (255, 255, 0), (375, 225), 70)
+    if pygame.mouse.get_pressed()[2]:
+        if 300 < pos[0] < 450 and 150 < pos[1] < 300:
+            pygame.draw.line(win, (255, 255, 0), (300, 300), (450, 150), 10)
+            pygame.draw.line(win, (255, 255, 0), (300, 150), (450, 300), 10)
+
+        # thrsaygjnwthyjnwt
+    if pygame.mouse.get_pressed()[0]:
+        if 0 < pos[0] < 150 and 300 < pos[1] < 450:
+            pygame.draw.circle(win, (255, 255, 0), (75, 375), 70)
+    if pygame.mouse.get_pressed()[2]:
+        if 0 < pos[0] < 150 and 300 < pos[1] < 450:
+            pygame.draw.line(win, (255, 255, 0), (0, 300), (150, 450), 10)
+            pygame.draw.line(win, (255, 255, 0), (0, 450), (150, 300), 10)
+
+    if pygame.mouse.get_pressed()[0]:
+        if 150 < pos[0] < 300 and 300 < pos[1] < 450:
+            pygame.draw.circle(win, (255, 255, 0), (225, 375), 70)
+    if pygame.mouse.get_pressed()[2]:
+        if 150 < pos[0] < 300 and 300 < pos[1] < 450:
+            pygame.draw.line(win, (255, 255, 0), (150, 300), (300, 450), 10)
+            pygame.draw.line(win, (255, 255, 0), (150, 450), (300, 300), 10)
+        # 3 krectik
+    if pygame.mouse.get_pressed()[0]:
+        if 300 < pos[0] < 450 and 300 < pos[1] < 450:
+            pygame.draw.circle(win, (255, 255, 0), (375, 375), 70)
+    if pygame.mouse.get_pressed()[2]:
+        if 300 < pos[0] < 450 and 300 < pos[1] < 450:
+            pygame.draw.line(win, (255, 255, 0), (300, 300), (450, 450), 10)
+            pygame.draw.line(win, (255, 255, 0), (300, 450), (450, 300), 10)
+    board = Board(500, 200)
+    board.nar_pole()
+    pygame.time.delay(20)
+    pygame.display.update()
